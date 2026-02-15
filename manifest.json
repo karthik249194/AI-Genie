@@ -1,0 +1,18 @@
+{
+  "name": "Research Insights Synthesizer",
+  "id": "research-insights-plugin",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/index.html",
+  "editorType": ["figma"],
+  "networkAccess": {
+    "allowedDomains": [
+      "https://api.groq.com",
+      "https://*.vercel.app"
+    ],
+    "reasoning": "Required for AI processing of research documents"
+  },
+  "capabilities": ["inspect"],
+  "permissions": ["read"],
+  "build": "1.0.0"
+}

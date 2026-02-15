@@ -1,0 +1,36 @@
+{
+  "name": "research-insights-plugin",
+  "version": "1.0.0",
+  "description": "Figma plugin to synthesize research insights from documents",
+  "main": "dist/code.js",
+  "scripts": {
+    "build": "npm run build:ui && npm run build:plugin",
+    "build:ui": "vite build",
+    "build:plugin": "esbuild src/plugin/code.ts --bundle --outfile=dist/code.js --target=es2017",
+    "dev": "concurrently \"npm run dev:ui\" \"npm run dev:plugin\"",
+    "dev:ui": "vite",
+    "dev:plugin": "esbuild src/plugin/code.ts --bundle --outfile=dist/code.js --target=es2017 --watch",
+    "vercel-build": "npm run build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "mammoth": "^1.6.0",
+    "pdf-parse": "^1.1.1",
+    "groq-sdk": "^0.3.0"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.79.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.19.11",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
+    "vite-plugin-singlefile": "^2.0.0"
+  }
+}
